@@ -1,0 +1,12 @@
+{
+  "id": "{A715D589-3041-4E53-80A2-B0AFC032E992}",
+  "author": "Ulrich BIttner",
+  "name": "Kaminueberwachung",
+  "url": "https://github.com/ubittner/Kaminueberwachung",
+  "compatibility": {
+    "version": "5.2"
+  },
+  "version": "1.00",
+  "build": 1,
+  "date": 1573059600
+}

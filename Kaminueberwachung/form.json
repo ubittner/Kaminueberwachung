@@ -1,0 +1,248 @@
+{
+  "elements": [
+    {
+      "type": "Image",
+      "image": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAHsAAAAeCAYAAAAM/mGWAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAuIwAALiMBeKU/dgAABCdpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjA8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjMwMDwvdGlmZjpYUmVzb2x1dGlvbj4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6WVJlc29sdXRpb24+MzAwPC90aWZmOllSZXNvbHV0aW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MTIzPC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6Q29sb3JTcGFjZT4xPC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4zMDwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxkYzpzdWJqZWN0PgogICAgICAgICAgICA8cmRmOkJhZy8+CiAgICAgICAgIDwvZGM6c3ViamVjdD4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTktMDgtMjJUMDk6MDg6OTQ8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wOkNyZWF0b3JUb29sPlBpeGVsbWF0b3IgMy44LjU8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cs410LEAAAJiSURBVGgF7VfRTcQwDD1ghmMIRmEA1mmXgCFgHhji/uEX/JB8ehfVVztpm+NwJCtO+vxeYittuttlywxkBjIDmQF/BvYCHcTexb5XMPCOYtDJ1jkDo+ivUeSSEzrZOmdgrRNdFhs6rnbjQiWoJgMoylbNVcfbrVaTOv0zkMXuX4MuK+BvgWcBUbzFyTweH9+oQaz1Fop48IDPo8sYCZltjGd/NvAMgHnYPxMy/SgaHMVPq8YTrbqDReicHwWnXNHeI2FxemItzGKcTGSJ8XwUz7HsM0/Ex4lsaTUnWtfn0VVs2XtiLUzJpWMLfzLPtzgEauN5nSv7KL6M13GUJ4pXnbJfiqfk1THz61xNz7WwOBljauQFzUzN9T3IYl9fTc0dXVqx8ZqaM93MhzqVPcfPaeI5vvGj2F6speGVG7EWLTOWN2yC6EEUT6EnLvN4/YMwPJ6wxAejhHj1GIc4T+MY9j2xFoZ52Lfw5nw0OIq3hJkn4rfexnFCBzHwrKFrcVp58Mw3cfItDkTaeF7nyj6KL+N1HOWJ4lWntY/qMr5Fm2thcTLG1Lq0b7a50HzQnoEsdnsO/wwDFzt6O9VNcpzO1fZ4Tc2ZcrfqzumUz5fSxSs3Yqr7oE5tz8V+qySpjauUO4a9Hr1tnV66T0tuM3o7xS12FENcSytP0NwYuoPYpeta+4jmCica+z2INXG6bnHR1SX+NwMozFbNVUd+jW+1sNTplIEsdqfE95DNYq+X9da/Be/K3DpZbG9K47it/lLcOnfxPWSEMwP4a/gUuxdr/XOYksSJfhF7FvuaAuTcP87AD0h7uMXbEl7aAAAAAElFTkSuQmCC"
+    },
+    {
+      "type": "Label",
+      "caption": "Kaminüberwachung - Ein Gemeinschaftsprojekt von Normen Thiel & Ulrich Bittner\n\n"
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "Instanzinformationen",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Mit dieser Instanz kann ein Kamin überwacht werden."
+        },
+        {
+          "type": "Label",
+          "caption": "Weitere Informationen entnehmen Sie bitte der Dokumentation.\n\n"
+        },
+        {
+          "type": "Label",
+          "caption": "Symcon Version:\t5.2>"
+        },
+        {
+          "type": "Label",
+          "caption": "Name:\t\t\tKaminüberwachung"
+        },
+        {
+          "type": "Label",
+          "caption": "Version:\t\t\t1.00-1"
+        },
+        {
+          "type": "Label",
+          "caption": "Datum:\t\t\t6. November 2019"
+        },
+        {
+          "type": "Label",
+          "caption": "Uhrzeit:\t\t\t18:00"
+        },
+        {
+          "type": "Label",
+          "caption": "Entwickler:\t\tUlrich Bittner"
+        },
+        {
+          "type": "Label",
+          "caption": "Präfix:\t\t\tKUE"
+        }
+      ]
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "Kaminüberwachung",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Bitte wählen Sie den Temperatursensor (Variable) [HmIP Kanal 1 'ACTUAL_TEMPERATURE'] aus:"
+        },
+        {
+          "type": "SelectVariable",
+          "name": "TemperatureSensor",
+          "caption": "Tempertaursensor"
+        },
+        {
+          "type": "Label",
+          "caption": "\nBitte geben Sie den Schwellenwert in °C an:"
+        },
+        {
+          "type": "NumberSpinner",
+          "name": "Threshold",
+          "caption": "Schwellenwert",
+          "digits": 1,
+          "suffix": "°C"
+        },
+        {
+          "type": "ExpansionPanel",
+          "caption": "Info",
+          "items": [
+            {
+              "type": "Label",
+              "caption": "Liegt der aktuelle Temperaturwert unterhalb des Schwellenwertes, so wird die allgemeine Statusvariable auf OK gesetzt."
+            },
+            {
+              "type": "Label",
+              "caption": "Wird der Schwellenwert erreicht oder überschritten, so wird die allgemeine Statusvariable auf ALARM gesetzt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "Fensterüberwachung",
+      "items": [
+        {
+          "type": "Label",
+          "caption": "Bitte wählen Sie die Fenstersenoren (Variable) [HmIP Kanal 1 'STATE'] zur Überwachung aus:"
+        },
+        {
+          "type": "List",
+          "name": "WindowSensors",
+          "caption": "Fenstersensoren",
+          "rowCount": 5,
+          "add": true,
+          "delete": true,
+          "sort": {
+            "column": "ID",
+            "direction": "ascending"
+          },
+          "columns": [
+            {
+              "name": "UseSensor",
+              "caption": "Aktiviert",
+              "width": "100px",
+              "add": true,
+              "edit": {
+                "type": "CheckBox"
+              }
+            },
+            {
+              "name": "ID",
+              "caption": "Fenstersensor",
+              "width": "350px",
+              "add": 0,
+              "edit": {
+                "type": "SelectVariable"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExpansionPanel",
+      "caption": "Schaltvorgang",
+      "items": [
+        {
+          "type": "ExpansionPanel",
+          "caption": "Info",
+          "items": [
+            {
+              "type": "Label",
+              "caption": "Ändert sich die allgemeine Statusvariable, so wird die Zielvariable geschaltet, bzw. das Zielskript ausgeführt."
+            },
+            {
+              "type": "Label",
+              "caption": "Wird ein Skript verwendet, so wird der Status (0 = OK, 1 = Alarm) dem Skript übergeben."
+            },
+            {
+              "type": "Label",
+              "caption": "$_IPS['Status']"
+            }
+          ]
+        },
+        {
+          "type": "Label",
+          "caption": "Bitte wählen Sie eine Zielvariable (Steckdose) [HmIP Kanal 3 'STATE'] aus:"
+        },
+        {
+          "type": "SelectVariable",
+          "name": "TargetVariable",
+          "caption": "Zielvariable"
+        },
+        {
+          "type": "Label",
+          "caption": "\nBitte wählen Sie den Schaltvorgang der Zielvariable bei Status ALARM aus:"
+        },
+        {
+          "type": "RowLayout",
+          "items": [
+            {
+              "type": "Label",
+              "caption": "\nausschalten"
+            },
+            {
+              "type": "CheckBox",
+              "name": "ToggleMode",
+              "caption": "einschalten"
+            }
+          ]
+        },
+        {
+          "type": "Label",
+          "caption": "\nBitte wählen Sie aus, ob nach einer erneuten Statusänderung auf OK der Ursprungszustand wiederhergestellt werden soll:"
+        },
+        {
+          "type": "CheckBox",
+          "name": "RevertOriginalState",
+          "caption": "Ursprungszustand wiederherstellen"
+        },
+        {
+          "type": "Label",
+          "caption": "\nBitte wählen Sie ein Zielskript aus:"
+        },
+        {
+          "type": "SelectScript",
+          "name": "TargetScript",
+          "caption": "Zielskript"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "ExpansionPanel",
+      "caption": "Aktionen",
+      "items": [
+        {
+          "type": "Button",
+          "caption": "Registrierte Variablen anzeigen",
+          "onClick": "$variables = KUE_ShowMessageSink($id);"
+        }
+      ]
+    },
+    {
+      "type": "TestCenter"
+    }
+  ],
+  "status": [
+    {
+      "code": 101,
+      "icon": "active",
+      "caption": "Kaminüberwachung wird erstellt"
+    },
+    {
+      "code": 102,
+      "icon": "active",
+      "caption": "Kaminüberwachung ist aktiv"
+    },
+    {
+      "code": 103,
+      "icon": "active",
+      "caption": "Kaminüberwachung wird gelöscht"
+    },
+    {
+      "code": 104,
+      "icon": "inactive",
+      "caption": "Kaminüberwachung ist inaktiv"
+    },
+    {
+      "code": 200,
+      "icon": "inactive",
+      "caption": "Es ist Fehler aufgetreten, weitere Informationen unter Meldungen"
+    }
+  ]
+}
