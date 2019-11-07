@@ -13,8 +13,12 @@ trait KUE_triggerAlarm
         $newState = false;
         // Actual state
         $actualState = $this->GetValue('Status');
+        $this->SendDebug(__FUNCTION__, 'Aktueller Status: ' . $actualState, 0);
         // Temperature sensor
         $temperatureSensor = $this->ReadPropertyInteger('TemperatureSensor');
+        if ($temperatureSensor == 0 || !IPS_ObjectExists($temperatureSensor)) {
+            return;
+        }
         $actualTemperature = GetValueFloat($temperatureSensor);
         $this->SendDebug(__FUNCTION__, 'Aktuelle Temperatur: ' . (string) $actualTemperature . ' °C', 0);
         // Window status
@@ -29,33 +33,38 @@ trait KUE_triggerAlarm
                 $newState = true;
             }
         }
+        $this->SendDebug(__FUNCTION__, 'Neuer Status: ' . $newState, 0);
         // State changed
         if ($newState != $actualState) {
+            $this->SendDebug(__FUNCTION__, 'Status hat sich geändert.', 0);
             // Set new status
             $this->SetValue('Status', $newState);
             // Target variable
             $targetVariable = $this->ReadPropertyInteger('TargetVariable');
-            if ($targetVariable == 0 || @!IPS_ObjectExists($targetVariable)) {
+            if ($targetVariable == 0 || !IPS_ObjectExists($targetVariable)) {
                 return;
             }
             $targetValue = boolval(GetValue($targetVariable));
             $toggleMode = false;
             // Alarm
             if ($newState) {
+                $this->SendDebug(__FUNCTION__, 'Status: ALARM', 0);
                 // Set Attribute
                 $this->WriteAttributeBoolean('OriginState', $targetValue);
                 $toggleMode = $this->ReadPropertyBoolean('ToggleMode');
             }
             // OK
             if (!$newState) {
+                $this->SendDebug(__FUNCTION__, 'Status: OK', 0);
                 $revertOriginState = $this->GetValue('RevertOriginState');
                 if ($revertOriginState) {
                     $toggleMode = $this->ReadAttributeBoolean('OriginState');
                 }
             }
-            if (!$this->GetValue('Monitoring')) {
+            if ($this->GetValue('Monitoring')) {
                 // Toggle target variable
                 if ($targetValue != $toggleMode) {
+                    $this->SendDebug(__FUNCTION__, 'Steckdose wird geschaltet: ' . $toggleMode, 0);
                     $toggle = @RequestAction($targetVariable, $toggleMode);
                     if (!$toggle) {
                         // 2nd try
@@ -71,6 +80,7 @@ trait KUE_triggerAlarm
                 // Script
                 $targetScript = $this->ReadPropertyInteger('TargetScript');
                 if ($targetScript != 0 && IPS_ObjectExists($targetScript)) {
+                    $this->SendDebug(__FUNCTION__, 'Skript wird ausgeführt mit dem Status: ' . $newState, 0);
                     $execute = @IPS_RunScriptEx($targetScript, ['Status' => intval($newState)]);
                     if (!$execute) {
                         // 2nd try
