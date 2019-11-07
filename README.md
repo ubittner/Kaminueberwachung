@@ -1,4 +1,4 @@
-[![Image](imgs/nt&ub_logo.png)](https://github.com/ubittner)  
+[![Image](imgs/ntub_logo.png)](https://github.com/ubittner)  
 
 # Kaminüberwachung  
 

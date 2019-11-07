@@ -1,8 +1,8 @@
 {
-  "id": "{0D716C57-F668-47E6-88C3-EF5BE3F2B0D6}",
+  "id": "{4021F6F3-E0C2-7742-BF37-49D55703406D}",
   "name": "Kaminueberwachung",
   "type": 3,
-  "vendor": "Ulrich Bittner",
+  "vendor": "NTUB",
   "url": "https://github.com/ubittner/Kaminueberwachung",
   "aliases": [
     "Kaminüberwachung"

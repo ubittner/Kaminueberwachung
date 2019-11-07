@@ -29,7 +29,7 @@ trait KUE_registerVariableUpdates
     {
         // Unregister all variable updates first
         $this->UnregisterVariableUpdates();
-        // Check for an existing temperature sensor and register
+        // Register existing temperature sensor
         $temperatureSensor = $this->ReadPropertyInteger('TemperatureSensor');
         if ($temperatureSensor != 0 && IPS_ObjectExists($temperatureSensor)) {
             $this->RegisterMessage($temperatureSensor, VM_UPDATE);
@@ -47,6 +47,11 @@ trait KUE_registerVariableUpdates
                     $this->RegisterMessage($id, VM_UPDATE);
                 }
             }
+        }
+        // Register target variable
+        $targetVariable = $this->ReadPropertyInteger('TargetVariable');
+        if ($targetVariable != 0 && IPS_ObjectExists($targetVariable)) {
+            $this->RegisterMessage($targetVariable, VM_UPDATE);
         }
     }
 

@@ -18,10 +18,10 @@
  * @see         https://github.com/ubittner/Kaminueberwachung/
  *
  * @guids       Library
- *              {A715D589-3041-4E53-80A2-B0AFC032E992}
+ *              {C23D1F38-4D3F-B923-1993-0FA3B35E265D}
  *
  *              Kaminüberwachung
- *             	{0D716C57-F668-47E6-88C3-EF5BE3F2B0D6}
+ *             	{4021F6F3-E0C2-7742-BF37-49D55703406D}
  *
  */
 
@@ -35,10 +35,10 @@ include_once __DIR__ . '/helper/autoload.php';
 class Kaminueberwachung extends IPSModule
 {
     // Traits
-    use KUE_createLinks;
+    use KUE_checkWindowSensors;
+    use KUE_createVariableLinks;
     use KUE_registerVariableUpdates;
     use KUE_triggerAlarm;
-    use KUE_checkWindowSensors;
 
     public function Create()
     {
@@ -76,7 +76,12 @@ class Kaminueberwachung extends IPSModule
             IPS_CreateVariableProfile($profileName, 0);
         }
         IPS_SetVariableProfileAssociation($profileName, 0, 'OK', 'Information', 0x00FF00);
-        IPS_SetVariableProfileAssociation($profileName, 1, 'Alarm', 'Warning', 0xFF0000);
+        IPS_SetVariableProfileAssociation($profileName, 1, 'ALARM', 'Warning', 0xFF0000);
+
+        //################### Register attributes
+
+        // Origin state
+        $this->RegisterAttributeBoolean('OriginState', false);
     }
 
     public function ApplyChanges()
@@ -92,12 +97,10 @@ class Kaminueberwachung extends IPSModule
             return;
         }
 
-        $this->MaintainVariable('AlarmLightGroupSwitch', 'Alarmbeleuchtungsgruppe', 0, '~Switch', 1, true);
-
         //#################### Register variables
 
         // Monitoring
-        $this->MaintainVariable('Monitoring', 'Überwachung', 0,'~Switch', 0, true);
+        $this->MaintainVariable('Monitoring', 'Kaminüberwachung', 0, '~Switch', 0, true);
         $this->EnableAction('Monitoring');
 
         // Create temperature link
@@ -109,13 +112,21 @@ class Kaminueberwachung extends IPSModule
 
         // State
         $profileName = 'KUE.' . $this->InstanceID . '.Status';
-        $this->MaintainVariable('Status', 'Status', 0, $profileName, 3, true);
+        $this->MaintainVariable('Status', 'Allgemeiner Status', 0, $profileName, 3, true);
+
+        // Origin state
+        $this->MaintainVariable('RevertOriginState', 'Schaltzustand wiederherstellen', 0, '~Switch', 4, true);
+        $this->EnableAction('RevertOriginState');
+        IPS_SetIcon($this->GetIDForIdent('RevertOriginState'), 'Plug');
 
         // Create target variable link
         $this->CreateTargetVariableLink();
 
         // Register variable updates
         $this->RegisterVariableUpdates();
+
+        // Set origin state
+        $this->SetOriginState(true);
 
         // Check door window sensors
         $this->CheckWindowSensors();
@@ -140,14 +151,23 @@ class Kaminueberwachung extends IPSModule
             case VM_UPDATE:
                 // Temperature sensor
                 $temperatureSensor = $this->ReadPropertyInteger('TemperatureSensor');
-                if ($SenderID === $temperatureSensor) {
-                    $this->CheckActualState();
+                if ($temperatureSensor != 0 && IPS_ObjectExists($temperatureSensor)) {
+                    if ($SenderID === $temperatureSensor) {
+                        $this->CheckActualState();
+                    }
                 }
                 // Window sensors
                 $windowSensors = json_decode($this->ReadPropertyString('WindowSensors'), true);
                 if (!empty($windowSensors)) {
                     if (array_search($SenderID, array_column($windowSensors, 'ID')) !== false) {
                         $this->CheckWindowSensors();
+                    }
+                }
+                // Target variable
+                $targetVariable = $this->ReadPropertyInteger('TargetVariable');
+                if ($targetVariable != 0 && IPS_ObjectExists($targetVariable)) {
+                    if ($SenderID === $targetVariable) {
+                        $this->SetOriginState(false);
                     }
                 }
                 break;
@@ -161,6 +181,10 @@ class Kaminueberwachung extends IPSModule
         switch ($Ident) {
             case 'Monitoring':
                 $this->SetValue('Monitoring', $Value);
+                $this->CheckWindowSensors();
+                break;
+            case 'RevertOriginState':
+                $this->SetValue('RevertOriginState', $Value);
                 break;
         }
     }

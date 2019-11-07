@@ -3,7 +3,7 @@
 // Declare
 declare(strict_types=1);
 
-trait KUE_createLinks
+trait KUE_createVariableLinks
 {
     /**
      * Creates a link of the temperature sensor.
@@ -13,10 +13,10 @@ trait KUE_createLinks
         // Create link
         $temperatureSensor = $this->ReadPropertyInteger('TemperatureSensor');
         if ($temperatureSensor != 0 && IPS_ObjectExists($temperatureSensor)) {
-            $linkID = @IPS_GetLinkIDByName('Temperatur', $this->InstanceID);
+            $linkID = @IPS_GetLinkIDByName('Aktuelle Temperatur', $this->InstanceID);
             if ($linkID === false) {
                 $linkID = IPS_CreateLink();
-                IPS_SetName($linkID, 'Temperatur');
+                IPS_SetName($linkID, 'Aktuelle Temperatur');
                 IPS_SetParent($linkID, $this->InstanceID);
                 IPS_SetPosition($linkID, 1);
                 IPS_SetIcon($linkID, 'Temperature');
@@ -25,7 +25,7 @@ trait KUE_createLinks
         }
         // Delete link
         if ($temperatureSensor == 0 || !IPS_ObjectExists($temperatureSensor)) {
-            $linkID = @IPS_GetLinkIDByName('Temperatur', $this->InstanceID);
+            $linkID = @IPS_GetLinkIDByName('Aktuelle Temperatur', $this->InstanceID);
             if (is_int($linkID)) {
                 IPS_DeleteLink($linkID);
             }
