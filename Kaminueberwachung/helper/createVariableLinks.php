@@ -49,6 +49,7 @@ trait KUE_createVariableLinks
                 IPS_SetIcon($linkID, 'Power');
                 IPS_SetLinkTargetID($linkID, $targetVariable);
             }
+            IPS_SetHidden($linkID, $this->GetValue('Monitoring'));
         }
         // Delete link
         if ($targetVariable == 0 || !IPS_ObjectExists($targetVariable)) {

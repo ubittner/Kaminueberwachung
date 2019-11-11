@@ -182,6 +182,7 @@ class Kaminueberwachung extends IPSModule
             case 'Monitoring':
                 $this->SetValue('Monitoring', $Value);
                 $this->CheckWindowSensors();
+                $this->CreateTargetVariableLink();
                 break;
             case 'RevertOriginState':
                 $this->SetValue('RevertOriginState', $Value);
