@@ -34,6 +34,11 @@ trait KUE_registerVariableUpdates
         if ($temperatureSensor != 0 && IPS_ObjectExists($temperatureSensor)) {
             $this->RegisterMessage($temperatureSensor, VM_UPDATE);
         }
+        // Register target variable
+        $targetVariable = $this->ReadPropertyInteger('TargetVariable');
+        if ($targetVariable != 0 && IPS_ObjectExists($targetVariable)) {
+            $this->RegisterMessage($targetVariable, VM_UPDATE);
+        }
         // Register window sensors
         $windowSensors = json_decode($this->ReadPropertyString('WindowSensors'));
         if (empty($windowSensors)) {
@@ -47,11 +52,6 @@ trait KUE_registerVariableUpdates
                     $this->RegisterMessage($id, VM_UPDATE);
                 }
             }
-        }
-        // Register target variable
-        $targetVariable = $this->ReadPropertyInteger('TargetVariable');
-        if ($targetVariable != 0 && IPS_ObjectExists($targetVariable)) {
-            $this->RegisterMessage($targetVariable, VM_UPDATE);
         }
     }
 
